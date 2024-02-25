@@ -1,4 +1,3 @@
-
 FROM --platform=arm64 rust:latest as builder
 WORKDIR /home/backend/
 COPY ./backend/ /home/backend/
@@ -13,8 +12,7 @@ RUN chmod 700 /home/cmd.bash
 
 
 LABEL Author="SinNguyen"
-RUN touch /test4.yo
 EXPOSE 3000/tcp
 
-
-CMD ["/home/cmd.bash"]
+WORKDIR /home/
+CMD ["./cmd.bash"]
