@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Start the first process
-mongod &
+mongod > /dev/null &
 mongo_id=$!
 # Start the second process
 /home/server &
@@ -12,7 +12,7 @@ cleanup() {
     echo "bye $mongo_id"
     kill $server_id
     echo "bye $server_id"
-    echo "bye bitch"
+    echo "bye bruh"
     exit 0
 }
 
